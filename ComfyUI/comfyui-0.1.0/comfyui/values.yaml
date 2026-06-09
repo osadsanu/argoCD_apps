@@ -85,9 +85,23 @@ resources:
   limits:
     cpu: 8
     memory: 10Gi
+    nvidia.com/gpu: 1
   requests:
     cpu: 4
     memory: 1Gi
+    nvidia.com/gpu: 1
+
+# Environment variables for ComfyUI container
+env:
+  - name: http_proxy
+    value: "http://hpeproxy.its.hpecorp.net:8080"
+  - name: https_proxy
+    value: "http://hpeproxy.its.hpecorp.net:8080"
+  - name: HTTP_PROXY
+    value: "http://hpeproxy.its.hpecorp.net:8080"
+  - name: HTTPS_PROXY
+    value: "http://hpeproxy.its.hpecorp.net:8080"
+
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 
