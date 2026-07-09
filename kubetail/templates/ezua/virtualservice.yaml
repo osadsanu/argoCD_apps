@@ -1,7 +1,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: {{ include "kubetail.name" . }}
+  name: {{ include "kubetail.fullname" . }}
+  namespace: {{ include "kubetail.namespace" . }}
 spec:
   gateways:
     - {{ .Values.ezua.virtualService.istioGateway | required ".Values.ezua.virtualService.istioGateway is required !\n" }}
