@@ -19,3 +19,4 @@ spec:
             host: {{ .Chart.Name }}.{{ .Release.Namespace }}.svc.cluster.local
             port:
               number: {{ .Values.port }}
+https://github.com/osadsanu/argoCD_apps
