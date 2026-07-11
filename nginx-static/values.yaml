@@ -1,7 +1,14 @@
 # Default values for nginx-static.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+ezua:
+  virtualService:
+    endpoint: "comfyui.${DOMAIN_NAME}"
+    istioGateway: "istio-system/ezaf-gateway"
 
+logoImage: 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
+clusterDomain: cluster.local
+annotations: {}
 # This will set the replicaset count more information can be found here: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 replicaCount: 1
 
@@ -55,83 +62,36 @@ service:
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
   port: 80
+  containerPort: 80
+  nodePort: ""
+  labels: {}
+  loadBalancerClass: ""
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: false
   className: ""
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  host: ""
+  additionalHosts: []
+  tls: false
+  existingSecret: ""
 
-# -- Expose the service via gateway-api HTTPRoute
-# Requires Gateway API resources and suitable controller installed within the cluster
-# (see: https://gateway-api.sigs.k8s.io/guides/)
-httpRoute:
-  # HTTPRoute enabled.
-  enabled: false
-  # HTTPRoute annotations.
-  annotations: {}
-  # Which Gateways this Route is attached to.
-  parentRefs:
-  - name: gateway
-    sectionName: http
-    # namespace: default
-  # Hostnames matching HTTP header.
-  hostnames:
-  - chart-example.local
-  # List of rules and filters applied.
-  rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /headers
-  #   filters:
-  #   - type: RequestHeaderModifier
-  #     requestHeaderModifier:
-  #       set:
-  #       - name: My-Overwrite-Header
-  #         value: this-is-the-only-value
-  #       remove:
-  #       - User-Agent
-  # - matches:
-  #   - path:
-  #       type: PathPrefix
-  #       value: /echo
-  #     headers:
-  #     - name: version
-  #       value: v2
-
-resources: {}
+resources: 
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  limits:
+    cpu: 8
+    memory: 10Gi
+#    nvidia.com/gpu: 1
+  requests:
+    cpu: 4
+    memory: 1Gi
+#   nvidia.com/gpu: 1
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
