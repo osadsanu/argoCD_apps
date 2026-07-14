@@ -8,7 +8,7 @@ chartVersion: "0.1.0"
 ezua:
   virtualService:
 #    endpoint: "nginx-pcai-argo.${DOMAIN_NAME}"
-    endpoint: "nginx-pcai-argo.pcai-se-ai-application.hst.rdlabs.hpecorp.net"
+    endpoint: "nginx-pcai-argo.es-ai-application.esltda.local"
 
     istioGateway: "istio-system/ezaf-gateway"
 
