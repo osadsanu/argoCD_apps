@@ -1,4 +1,4 @@
-apiVersion: ezconfig.hpe.ezaf.com/v1alpha1
+apiVersion: ezconfig.hpe.ezaf.com/v1
 kind: EzAppConfig
 metadata:
   name: ezappconfig-{{ .Chart.Name }}-app
