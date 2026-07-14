@@ -45,11 +45,6 @@ spec:
       containerPort: {{ .Values.service.containerPort }}
     ingress:
       enabled: {{ .Values.ingress.enabled }}
-    autoscaling:
-      enabled: {{ .Values.autoscaling.enabled }}
-      minReplicas: {{ .Values.autoscaling.minReplicas }}
-      maxReplicas: {{ .Values.autoscaling.maxReplicas }}
-      targetCPUUtilizationPercentage: {{ .Values.autoscaling.targetCPUUtilizationPercentage }}
     resources:
 {{ .Values.resources | toYaml | indent 6 }}
   version: ""
