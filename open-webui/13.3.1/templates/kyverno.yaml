@@ -19,6 +19,8 @@ spec:
           - {{ .Release.Namespace }}
           kinds:
           - Pod
+          - networking.istio.io/v1/VirtualService
+          - ezconfig.hpe.ezaf.com/v1alpha1/EzAppConfig
     mutate:
       patchStrategicMerge:
         metadata:

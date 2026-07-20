@@ -11,6 +11,10 @@ fullnameOverride: ""
 # -- Provide a namespace in place of the default release namespace
 namespaceOverride: ""
 
+# Chart version registered in the PCAI helm registry (used by the EzAppConfig wrapper).
+# Must match the version PCAI can resolve for the chart referenced in EzAppConfig .spec.name.
+chartVersion: "13.3.1"
+
 ezua:
   virtualService:
     endpoint: "open-webui.pcai-se-ai-application.hst.rdlabs.hpecorp.net"
