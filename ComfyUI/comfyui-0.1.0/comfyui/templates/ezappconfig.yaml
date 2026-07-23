@@ -20,6 +20,7 @@ spec:
   install: true
   label: ComfyUI
   name: {{ .Chart.Name }}
+  releaseName: {{ .Release.Name }}
   options:
     create-namespace: "true"
     namespace: {{ .Release.Namespace }}
