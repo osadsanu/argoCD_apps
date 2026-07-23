@@ -1,6 +1,10 @@
 # Default values for ComfyUI.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+# Chart version registered in the PCAI helm registry (used by the EzAppConfig wrapper).
+# Must match the version PCAI can resolve for the chart referenced in EzAppConfig .spec.name.
+chartVersion: "0.1.0"
+
 ezua:
   virtualService:
     endpoint: "comfyui.${DOMAIN_NAME}"
