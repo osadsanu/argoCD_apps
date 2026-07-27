@@ -117,23 +117,26 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 persistence:
-  # -- Enable persistence using PVC for Open WebUI data
+  # -- Enable persistence using PVC for ComfyUI data
   # @section -- Persistence configuration
   enabled: true
-  # -- Size of the Open WebUI PVC
+  # -- Path inside the ComfyUI container where the PVC will be mounted
+  # @section -- Persistence configuration
+  mountPath: /app/ComfyUI/models
+  # -- Size of the ComfyUI PVC
   # @section -- Persistence configuration
   size: 20Gi
-  # -- Use existingClaim if you want to re-use an existing Open WebUI PVC instead of creating a new one
+  # -- Use existingClaim if you want to re-use an existing ComfyUI PVC instead of creating a new one
   # @section -- Persistence configuration
   existingClaim: ""
-  # -- Subdirectory of Open WebUI PVC to mount. Useful if root directory is not empty.
+  # -- Subdirectory of the ComfyUI PVC to mount. Useful if root directory is not empty.
   # @section -- Persistence configuration
   subPath: ""
   # -- If using multiple replicas, you must update accessModes to ReadWriteMany
   # @section -- Persistence configuration
   accessModes:
     - ReadWriteOnce
-  # -- Storage class of the Open WebUI PVC
+  # -- Storage class of the ComfyUI PVC
   # @section -- Persistence configuration
   storageClass: ""
   # -- Selector to match to get the volume bound to the claim
