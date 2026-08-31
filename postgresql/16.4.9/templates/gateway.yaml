@@ -1,0 +1,20 @@
+{{- if and .Values.ezua.virtualService.tcp.enabled .Values.ezua.virtualService.tcp.createGateway }}
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: {{ include "postgresql.v1.primary.fullname" . }}-tcp
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "postgresql.labels" . | nindent 4 }}
+spec:
+  ## Selects the ingress gateway workload that will open the TCP listener.
+  selector:
+    {{- toYaml .Values.ezua.virtualService.tcp.gatewaySelector | nindent 4 }}
+  servers:
+    - port:
+        number: {{ .Values.ezua.virtualService.tcp.port }}
+        name: tcp-postgresql
+        protocol: TCP
+      hosts:
+        - "*"
+{{- end }}
