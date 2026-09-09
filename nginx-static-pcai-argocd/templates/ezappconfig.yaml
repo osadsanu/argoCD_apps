@@ -3,7 +3,7 @@ kind: EzAppConfig
 metadata:
   name: ezappconfig-{{ .Chart.Name }}-app
   annotations:
-    hpe-ezua/cleanup-chart-on-delete: "false"
+    hpe-ezua/cleanup-chart-on-delete: "true"
     hpe-ezua/minimal-cpu-request: '1'
     hpe-ezua/minimal-mem-request: 2G
     hpe-ezua/minimal-cpu-per-node-request: 1000m
